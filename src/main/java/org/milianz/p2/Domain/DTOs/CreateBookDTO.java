@@ -5,10 +5,13 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class CreateBookDTO {
+
     @NotBlank
     @NotNull
     private String title;
@@ -23,7 +26,7 @@ public class CreateBookDTO {
 
     @NotBlank
     @NotNull
-    private Integer publicationYear;
+    private int publicationYear;
 
     @NotBlank
     @NotNull
@@ -31,7 +34,7 @@ public class CreateBookDTO {
 
     @NotBlank
     @NotNull
-    private Integer pages;
+    private int pages;
 
     @NotBlank
     @NotNull

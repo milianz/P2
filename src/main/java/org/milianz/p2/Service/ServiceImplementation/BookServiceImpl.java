@@ -1,5 +1,6 @@
 package org.milianz.p2.Service.ServiceImplementation;
 
+import lombok.RequiredArgsConstructor;
 import org.milianz.p2.Domain.DTOs.CreateBookDTO;
 import org.milianz.p2.Domain.Entities.Book;
 import org.milianz.p2.Repository.iBookRepository;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class BookServiceImpl implements iBookService {
 
     @Autowired
