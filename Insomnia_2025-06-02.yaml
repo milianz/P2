@@ -1,0 +1,192 @@
+type: collection.insomnia.rest/5.0
+name: Inmomarket
+meta:
+  id: wrk_5cd3174e1074472f88cf3073a5e718d9
+  created: 1748211783379
+  modified: 1748218534399
+collection:
+  - name: Proyecto
+    meta:
+      id: fld_072092394df24450ac3afda461d0faf4
+      created: 1747589873896
+      modified: 1747590783703
+      sortKey: -1747589873896
+  - name: Parcial2
+    meta:
+      id: fld_0f7ed7fa41174714900765dc2ad5e007
+      created: 1748915564997
+      modified: 1748917802020
+      sortKey: -1748915564997
+    children:
+      - url: localhost:8080/api/books/create
+        name: New Request
+        meta:
+          id: req_30cf732ebad44e6da610c248c748798c
+          created: 1748915572845
+          modified: 1748916726592
+          isPrivate: false
+          sortKey: -1748915572845
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "title": "50 sombras de grey",
+              "author": "Nayib",
+              "isbn": "12345678901234",
+              "publicationYear": 2023,
+              "language": "English",
+              "pages": 300,
+              "genre": "Fiction"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/api/books/
+        name: New Request
+        meta:
+          id: req_bbda7b87b42240eebec47ee11f266344
+          created: 1748916499681
+          modified: 1748917519180
+          isPrivate: false
+          sortKey: -1748916499681
+        method: GET
+        parameters:
+          - id: pair_92122777e6514fedaf2f45aa8c164757
+            name: isbn
+            value: 123-4567890123
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/api/books/deleteByIsbn
+        name: New Request
+        meta:
+          id: req_0092b7eee32b40918b688955d250f420
+          created: 1748916982626
+          modified: 1748917133209
+          isPrivate: false
+          sortKey: -1748916982626
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - name: "\tisbn"
+              value: "12345678901234"
+              id: pair_855ccd1a5e6d494488639c7c4dc9022f
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/books/
+        name: New Request
+        meta:
+          id: req_21e33170fcd94a59bd6358376458b88a
+          created: 1748917560208
+          modified: 1748917618155
+          isPrivate: false
+          sortKey: -1748917598270
+        method: GET
+        parameters:
+          - id: pair_a67bda8bed544bdb81b9b8ffd5346537
+            name: lenguage
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/books/
+        name: New Request
+        meta:
+          id: req_b81545a31a8245549ed0ccffa3760f61
+          created: 1748917587909
+          modified: 1748917593788
+          isPrivate: false
+          sortKey: -1748917587909
+        method: GET
+        parameters:
+          - id: pair_9a4b48d8ad0c4302aa77cd29e2614de8
+            name: genre
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/books/
+        name: New Request
+        meta:
+          id: req_a9d7869a106a49a7844de45435585978
+          created: 1748917598170
+          modified: 1748917608518
+          isPrivate: false
+          sortKey: -1748917598170
+        method: GET
+        parameters:
+          - id: pair_e89838e9b24f4f8db61a1b5562c94a44
+            name: author
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_d272be1874cf4333900dbf8a1200eec9
+    created: 1747090906231
+    modified: 1747627769322
+environments:
+  name: Base Environment
+  meta:
+    id: env_f64a956db1c3415dbfae9ddc806ada32
+    created: 1747090906095
+    modified: 1747090906095
+    isPrivate: false
