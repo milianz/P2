@@ -1,5 +1,6 @@
 package org.milianz.p2.Service.ServiceImplementation;
 
+import org.milianz.p2.Domain.DTOs.CreateBookDTO;
 import org.milianz.p2.Domain.Entities.Book;
 import org.milianz.p2.Repository.iBookRepository;
 import org.milianz.p2.Service.iBookService;
@@ -41,5 +42,51 @@ public class BookServiceImpl implements iBookService {
         return List.of(bookRepository.findByPagesBetween(min, max));
     }
 
+    @Override
+    public void createBook(CreateBookDTO createBookDTO) {
+        Book book = new Book();
+        book.setTitle(createBookDTO.getTitle());
+        book.setAuthor(createBookDTO.getAuthor());
+        book.setIsbn(createBookDTO.getIsbn());
+        book.setPublicationYear(createBookDTO.getPublicationYear());
+        book.setLanguage(createBookDTO.getLanguage());
+        book.setPages(createBookDTO.getPages());
+        book.setGenre(createBookDTO.getGenre());
 
+        bookRepository.save(book);
+    }
+
+    @Override
+    public void updateBookLenguage(String isbn, String newLanguage) {
+        Book book = bookRepository.findByIsbn(isbn);
+        if (book != null) {
+            book.setLanguage(newLanguage);
+            bookRepository.save(book);
+        } else {
+            throw new IllegalArgumentException("El libro con:" + isbn + " no se pudo encontrar.");
+        }
+
+    }
+
+    @Override
+    public void updateBookTitle(String isbn, String newTitle) {
+        Book book = bookRepository.findByIsbn(isbn);
+        if (book != null) {
+            book.setTitle(newTitle);
+            bookRepository.save(book);
+        } else {
+            throw new IllegalArgumentException("El libro con:" + isbn + " no se pudo encontrar.");
+        }
+
+    }
+
+    @Override
+    public void deleteBook(String isbn) {
+        Book book = bookRepository.findByIsbn(isbn);
+        if (book != null) {
+            bookRepository.delete(book);
+        } else {
+            throw new IllegalArgumentException("El libro con:" + isbn + " no se pudo encontrar.");
+        }
+    }
 }
